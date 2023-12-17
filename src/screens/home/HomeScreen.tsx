@@ -1,5 +1,6 @@
 import React from "react";
 import { Alert, Text, View } from "react-native";
+import config from "react-native-ultimate-config";
 
 import { Touchable } from "src/components";
 
@@ -12,7 +13,7 @@ export const HomeScreen = () => (
         Alert.alert("boo!");
       }}
     >
-      <Text>Boo!</Text>
+      <Text>Current environment is {config.ENVIRONMENT}</Text>
     </Touchable>
   </View>
 );
