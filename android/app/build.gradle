@@ -77,7 +77,7 @@ android {
 
     namespace "com.appmobile"
     defaultConfig {
-        applicationId "com.appmobile"
+        applicationId project.config.get("BUNDLE_ID")
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
