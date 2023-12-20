@@ -70,3 +70,9 @@ yarn-error.log
 
 # react-native-ultimate-config
 rnuc.xcconfig
+
+# generated app icons
+**/ic_launcher.png
+**/ic_launcher_round.png
+android/app/src/main/res/playstore-icon.png
+ios/AppMobile/Images.xcassets/AppIcon.appiconset/

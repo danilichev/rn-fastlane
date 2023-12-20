@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "appicon:create": "iconset create",
     "env:prod": "sh scripts/set-env.sh production",
     "env:stage": "sh scripts/set-env.sh staging",
     "gradlew:clean": "cd android && ./gradlew clean",
@@ -37,6 +38,7 @@
     "eslint": "^8.19.0",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "icon-set-creator": "^1.2.6",
     "jest": "^29.2.1",
     "metro-react-native-babel-preset": "0.76.8",
     "prettier": "^2.4.1",
