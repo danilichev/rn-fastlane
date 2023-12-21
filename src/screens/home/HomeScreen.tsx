@@ -1,19 +1,33 @@
-import React from "react";
-import { Alert, Text, View } from "react-native";
+import React, { useMemo } from "react";
+import { Text, View } from "react-native";
+import {
+  getApplicationName,
+  getBuildNumber,
+  getBundleId,
+  getVersion,
+} from "react-native-device-info";
 import config from "react-native-ultimate-config";
-
-import { Touchable } from "src/components";
 
 import { styles } from "./styles";
 
-export const HomeScreen = () => (
-  <View style={styles.container}>
-    <Touchable
-      onPress={() => {
-        Alert.alert("boo!");
-      }}
-    >
-      <Text>Current environment is {config.ENVIRONMENT}</Text>
-    </Touchable>
-  </View>
-);
+export const HomeScreen = () => {
+  const appInfo = useMemo(
+    () => ({
+      appName: getApplicationName(),
+      buildNumber: getBuildNumber(),
+      bundleId: getBundleId(),
+      version: getVersion(),
+    }),
+    [],
+  );
+
+  return (
+    <View style={styles.container}>
+      <Text>App name: {appInfo.appName}</Text>
+      <Text>Bundle Id: {appInfo.bundleId}</Text>
+      <Text>Version: {appInfo.version}</Text>
+      <Text>Build: {appInfo.buildNumber}</Text>
+      <Text>Environment: {config.ENVIRONMENT}</Text>
+    </View>
+  );
+};
