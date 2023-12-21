@@ -80,8 +80,8 @@ android {
         applicationId project.config.get("APP_BUNDLE_ID")
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode project.config.get("APP_BUILD_NUMBER").toInteger()
+        versionName project.config.get("APP_VERSION")
     }
     signingConfigs {
         debug {
