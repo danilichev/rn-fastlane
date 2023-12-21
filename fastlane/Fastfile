@@ -1,0 +1,33 @@
+fastlane_version '2.217.0'
+
+app_build_number = ENV["APP_BUILD_NUMBER"]
+app_bundle_id = ENV["APP_BUNDLE_ID"]
+app_name = ENV["APP_NAME"]
+app_version = ENV["APP_VERSION"]
+
+before_all do
+  puts "APP NAME: #{app_name}"
+  puts "APP BUNDLE ID: #{app_bundle_id}"
+  puts "APP VERSION: #{app_version}"
+  puts "APP BUILD NUMBER: #{app_build_number}"
+
+  ensure_git_status_clean
+end
+
+after_all do
+  sh "git reset --hard"
+end
+
+platform :android do
+  desc 'Builds Android application'
+  lane :build do
+    puts "Building Android application"
+  end
+end
+
+platform :ios do
+  desc 'Builds iOS application'
+  lane :build do
+    puts "Building iOS application"
+  end
+end
